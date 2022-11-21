@@ -84,4 +84,4 @@
 
 % Setting the normal font size
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
-\setcounter{secnumdepth}{0}
+\onehalfspacing
