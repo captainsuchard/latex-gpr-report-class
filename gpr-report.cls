@@ -20,3 +20,4 @@
 \RequirePackage{siunitx}
 \RequirePackage{setspace}
 \RequirePackage{esdiff}
+\RequirePackage{tcolorbox}
