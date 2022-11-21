@@ -27,3 +27,8 @@
 % Passing options to packages to create setups for them
 \PassOptionsToPackage{font=footnotesize,labelfont=footnotesize,format=hang}{caption3}
 \PassOptionsToPackage{luatex,x11names}{xcolor}
+
+
+% Setting the normal font size
+\renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
+\setcounter{secnumdepth}{0}
