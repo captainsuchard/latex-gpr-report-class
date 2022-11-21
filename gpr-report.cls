@@ -63,6 +63,7 @@
 \setlength{\parindent}{0em}
 \setcounter{tocdepth}{4}
 % set up siunitx to display numbers correctly
+\sisetup{group-digits=none, table-alignment=center, locale=DE, uncertainty-mode=separate,output-open-uncertainty = [, output-close-uncertainty = ]}
 % Setting the normal font size
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
 \setcounter{secnumdepth}{0}
