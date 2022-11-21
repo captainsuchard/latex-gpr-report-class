@@ -68,6 +68,17 @@
 \fancyhead[L]{\footnotesize Gruppe \@group \\ \@groupMemberOne, \@groupMemberTwo}
 \fancyhead[C]{\footnotesize \@title \\ phy211 - Grundpraktikum Physik - Teil \rom{\@labCoursePart}}
 \fancyhead[R]{\footnotesize \@date \\ \@semester}
+% new environment for answering the questions from the script
+\newenvironment{question}[2]
+    {
+        \begin{tcolorbox}[adjusted title=\textbf{Zu Frage #1}]
+            \begin{center}
+                #2
+            \end{center}
+        \tcblower}
+    {
+    \end{tcolorbox}
+    }
 % Setting the normal font size
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
 \setcounter{secnumdepth}{0}
