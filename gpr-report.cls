@@ -28,6 +28,8 @@
 \PassOptionsToPackage{font=footnotesize,labelfont=footnotesize,format=hang}{caption3}
 \PassOptionsToPackage{luatex,x11names}{xcolor}
 
+%Command for creating roman numerals
+\newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 
 % Setting the normal font size
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
