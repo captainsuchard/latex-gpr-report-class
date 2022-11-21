@@ -23,3 +23,7 @@
 \RequirePackage{esdiff}
 \RequirePackage{tcolorbox}
 \RequirePackage{xcolor}
+
+% Passing options to packages to create setups for them
+\PassOptionsToPackage{font=footnotesize,labelfont=footnotesize,format=hang}{caption3}
+\PassOptionsToPackage{luatex,x11names}{xcolor}
