@@ -43,6 +43,20 @@
 \newcommand*\l@subsubsubsection{\@dottettocline{4}{10em}{5em}}
 
 
+
+% Creating commands for the supervisor and tutor
+\newcommand\gprGroup[1]{\renewcommand\@gprGroup{#1}}
+\newcommand\@gprGroup{}
+\newcommand\group[1]{\renewcommand\@group{#1}}
+\newcommand\@group{}
+\newcommand\semester[1]{\renewcommand\@semester{#1}}
+\newcommand\@semester{}
+\newcommand\labCoursePart[1]{\renewcommand\@labCoursePart{#1}}
+\newcommand\@labCoursePart{}
+\newcommand\groupMemberOne[1]{\renewcommand\@groupMemberOne{#1}}
+\newcommand\@groupMemberOne{}
+\newcommand\groupMemberTwo[1]{\renewcommand\@groupMemberTwo{#1}}
+\newcommand\@groupMemberTwo{}
 % Setting the normal font size
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
 \setcounter{secnumdepth}{0}
