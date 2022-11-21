@@ -1,6 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{gpr-report}[2022/11/21 v1.0.0 Report class for the Grundpraktikum Physik at the Carl-von-Ossietzky University Oldenburg]
-
+% Loading the class artice
+\LoadClass[a4paper,12pt]{article}
 % Packages required to use this class successfully
 \RequirePackage[left=1.75cm,right=1.75cm,top=1.75cm,bottom=2cm,footskip=15pt]{geometry}
 \RequirePackage{lmodern}
