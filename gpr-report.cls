@@ -64,6 +64,10 @@
 \setcounter{tocdepth}{4}
 % set up siunitx to display numbers correctly
 \sisetup{group-digits=none, table-alignment=center, locale=DE, uncertainty-mode=separate,output-open-uncertainty = [, output-close-uncertainty = ]}
+% set up the header
+\fancyhead[L]{\footnotesize Gruppe \@group \\ \@groupMemberOne, \@groupMemberTwo}
+\fancyhead[C]{\footnotesize \@title \\ phy211 - Grundpraktikum Physik - Teil \rom{\@labCoursePart}}
+\fancyhead[R]{\footnotesize \@date \\ \@semester}
 % Setting the normal font size
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
 \setcounter{secnumdepth}{0}
