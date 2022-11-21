@@ -32,11 +32,16 @@
 \newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 
 % Renewing the paragraph command to allow using the paragraph as subsubsubsection
-\newcommand{\subsubsubsection}{\@startsection{paragraph}{4}{\z@}%
-	% display heading, like subsubsection
-	{-3.25ex\@plus -1ex \@minus -.2ex}%
-	{1.5ex \@plus .2ex}%
-	{\normalfont\normalsize\bfseries}}
+\newcounter{subsubsubsection}[subsubsection]%
+\renewcommand{\thesubsubsubsection}{\thesubsubsection.\@arabic\c@subsubsubsection}%
+\newcommand{\subsubsubsection}{\@startsection{subsubsubsection}%
+{4}%
+{\z@}%
+{-3.25ex\@plus -1ex \@minus -.2ex}%
+{1.5ex \@plus .2ex}%
+{\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottettocline{4}{10em}{5em}}
+
 
 % Setting the normal font size
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
