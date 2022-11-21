@@ -57,6 +57,12 @@
 \newcommand\@groupMemberOne{}
 \newcommand\groupMemberTwo[1]{\renewcommand\@groupMemberTwo{#1}}
 \newcommand\@groupMemberTwo{}
+% Setting up counters and other variables from the article class
+\setcounter{secnumdepth}{4}
+\pagestyle{fancy}
+\setlength{\parindent}{0em}
+\setcounter{tocdepth}{4}
+% set up siunitx to display numbers correctly
 % Setting the normal font size
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
 \setcounter{secnumdepth}{0}
