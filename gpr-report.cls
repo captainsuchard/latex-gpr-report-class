@@ -22,3 +22,4 @@
 \RequirePackage{setspace}
 \RequirePackage{esdiff}
 \RequirePackage{tcolorbox}
+\RequirePackage{xcolor}
