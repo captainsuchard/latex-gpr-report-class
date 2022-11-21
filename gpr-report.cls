@@ -79,6 +79,9 @@
     {
     \end{tcolorbox}
     }
+% Command to reference the script
+\newcommand{\scriptref}[3]{\textit{Entnommen aus /1/, S. #1, #2 #3}}
+
 % Setting the normal font size
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
 \setcounter{secnumdepth}{0}
