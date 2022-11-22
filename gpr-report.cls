@@ -14,12 +14,11 @@
 \RequirePackage{float}
 \RequirePackage[bottom]{footmisc}
 \RequirePackage[useregional]{datetime2}
-\RequirePackage[pdfusetitle]{hyperref}
+\RequirePackage[pdfusetitle,hidelinks]{hyperref}
 \RequirePackage{listings}
 \RequirePackage[hypcap=true]{caption}
 \RequirePackage{pdfpages}
 \RequirePackage{siunitx}
-\RequirePackage{setspace}
 \RequirePackage{esdiff}
 \RequirePackage{tcolorbox}
 \RequirePackage{xcolor}
@@ -53,10 +52,20 @@
 \newcommand\@semester{}
 \newcommand\labCoursePart[1]{\renewcommand\@labCoursePart{#1}}
 \newcommand\@labCoursePart{}
-\newcommand\groupMemberOne[1]{\renewcommand\@groupMemberOne{#1}}
-\newcommand\@groupMemberOne{}
-\newcommand\groupMemberTwo[1]{\renewcommand\@groupMemberTwo{#1}}
-\newcommand\@groupMemberTwo{}
+\newcommand\tutor[1]{\renewcommand\@tutor{#1}}
+\newcommand\@tutor{}
+\newcommand\supervisor[1]{\renewcommand\@supervisor{#1}}
+\newcommand\@supervisor{}
+\newcommand\groupMemberOne[4]{\renewcommand\@groupMemberOneFirstName{#1}\renewcommand\@groupMemberOneLastName{#2}\renewcommand\@groupMemberOneMatriculationNumber{#3}\renewcommand\@groupMemberOneEMail{#4}}
+\newcommand\@groupMemberOneFirstName{}
+\newcommand\@groupMemberOneLastName{}
+\newcommand\@groupMemberOneMatriculationNumber{}
+\newcommand\@groupMemberOneEMail{}
+\newcommand\groupMemberTwo[4]{\renewcommand\@groupMemberTwoFirstName{#1}\renewcommand\@groupMemberTwoLastName{#2}\renewcommand\@groupMemberTwoMatriculationNumber{#3}\renewcommand\@groupMemberTwoEMail{#4}}
+\newcommand\@groupMemberTwoFirstName{}
+\newcommand\@groupMemberTwoLastName{}
+\newcommand\@groupMemberTwoMatriculationNumber{}
+\newcommand\@groupMemberTwoEMail{}
 % Setting up counters and other variables from the article class
 \setcounter{secnumdepth}{4}
 \pagestyle{fancy}
@@ -65,9 +74,9 @@
 % set up siunitx to display numbers correctly
 \sisetup{group-digits=none, table-alignment=center, locale=DE, uncertainty-mode=separate,output-open-uncertainty = [, output-close-uncertainty = ]}
 % set up the header
-\fancyhead[L]{\footnotesize Gruppe \@group \\ \@groupMemberOne, \@groupMemberTwo}
+\fancyhead[L]{\footnotesize Gruppe \@group \\ \@groupMemberOneLastName, \@groupMemberTwoLastName}
 \fancyhead[C]{\footnotesize \@title \\ phy211 - Grundpraktikum Physik - Teil \rom{\@labCoursePart}}
-\fancyhead[R]{\footnotesize \@date \\ \@semester}
+\fancyhead[R]{\footnotesize \@date \\ \ifodd \@labCoursePart WS \else SS \fi \@semester}
 % new environment for answering the questions from the script
 \newenvironment{question}[2]
     {
@@ -82,6 +91,45 @@
 % Command to reference the script
 \newcommand{\scriptref}[3]{\textit{Entnommen aus /1/, S. #1, #2 #3}}
 
-% Setting the normal font size
-\renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
-\onehalfspacing
+\renewcommand*{\maketitle}{%
+\begin{titlepage}
+    \begin{center}
+        \topskip0pt
+        \vspace*{\fill}
+        \pagenumbering{Roman}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth, keepaspectratio]{logo.png}
+        \end{figure}
+        \vspace{0.1cm}
+        {\Large Grundpraktikum Physik \rom{1} - \ifodd \@labCoursePart Wintersemester \else Sommersemester \fi \@semester}\\
+        \vspace{1.5cm}
+        {\huge \textsc{\thetitle}}\\
+        \vspace{1.5cm}
+        {\Large \thedate}\\
+        \vspace{0.5cm}
+        {\Large Gruppe \@group \ (GPR Gruppe \@gprGroup)}\\
+        \vspace{1.5cm}
+        \begin{tabular}[t]{c@{\extracolsep{8em}}c}
+            {\Large\textbf{Betreuer}} & {\Large\textbf{Tutor}} \\
+            {\large \@supervisor} & {\large \@tutor} \\
+        \end{tabular}\\
+        \vspace{1.5cm}
+        {\Large\textbf{Gruppenmitglieder}} \\~\\
+        
+        {\large \textit{\@groupMemberOneFirstName \  \@groupMemberOneLastName}} \\
+        Matrikelnummer: \@groupMemberOneMatriculationNumber \\
+        \href{mailto:\@groupMemberOneEMail}{\@groupMemberOneEMail}
+        \\~\\
+        
+        {\large \textit{\@groupMemberTwoFirstName \  \@groupMemberTwoLastName}} \\
+        Matrikelnummer: \@groupMemberTwoMatriculationNumber \\
+        \href{mailto:\@groupMemberTwoEMail}{\@groupMemberTwoEMail}
+        \vspace*{\fill}
+        \thispagestyle{empty}
+        \newpage
+    \end{center}
+    \tableofcontents
+\end{titlepage}
+\pagenumbering{arabic}
+}
